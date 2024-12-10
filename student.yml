@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: student
+  datasource:
+    url: jdbc:mysql://student-db:3306/students?createDatabaseIfNotExist=true
+    username: root
+    password: SQL22++
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8070

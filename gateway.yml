@@ -1,0 +1,29 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka/
+server:
+  port: 8080
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: students
+          uri: lb://students
+          predicates:
+            - Path=/api/students/**
+        - id: courses
+          uri: lb://courses
+          predicates:
+            - Path=/api/courses/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
