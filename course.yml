@@ -2,7 +2,7 @@ spring:
   application:
     name: course
   datasource:
-    url: jdbc:mysql://course-db:3307/courses?createDatabaseIfNotExist=true
+    url: jdbc:mysql://course-db:3306/courses?createDatabaseIfNotExist=true
     username: root
     password: rootpassword
   jpa:
