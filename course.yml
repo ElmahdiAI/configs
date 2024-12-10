@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:mysql://course-db:3307/courses?createDatabaseIfNotExist=true
     username: root
-    password: SQL22++
+    password: rootpassword
   jpa:
     hibernate:
       ddl-auto: update
